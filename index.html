@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsiv Navigation uising Javascript</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    nav{
+        display: flex;
+        justify-content: space-around;
+        max-width: 1100px;
+        margin: auto;
+        padding: 16px 32px;
+    }
+    nav h1{ 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+         padding: 16px;
+         background: rgb(97, 199, 97);
+         border-radius: 50%;
+         border: 2px solid green;
+         color: rgb(9, 59, 9);
+         width: 50px;
+         height: 50px;
+        }
+    nav section {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+    }
+    nav section a:hover{
+        background-color: rgb(28, 59, 28);
+        border-radius: 4px;
+        color: white;
+    }
+    nav section a{
+        padding: 8px;
+        text-decoration: none;
+        color: green;
+        font-size: 20px;
+
+    }
+    nav div{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 10px;
+        border:none;
+    }
+    nav div hr{
+      border:  none
+      
+    }
+
+
+
+    @media (max-width:700px) {
+        nav{
+        display: flex;
+        justify-content: space-between;
+        max-width: 1100px;
+        margin: auto;
+        padding: 16px 32px;
+    }
+    nav h1{
+        font-size: 18px;
+        width: 25px;
+        height: 25px;
+    }
+    nav section {
+
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: center;
+        width: 50vw;
+        padding-top:30px;      
+    }
+    nav section a:hover{
+        background-color: rgb(28, 59, 28);
+        border-radius: 4px;
+        color: white;
+    }
+    nav section a{
+        padding: 8px;
+        text-decoration: none;
+        color: rgb(25, 59, 25);
+        display: block;
+        background-color: green;
+        color: white;
+
+    }
+    nav div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 10px;
+        border-top: 1px solid green;
+        border-bottom: 1px solid green;
+    }
+    nav div hr{
+      border:   1px solid green;
+      width: 100%;
+    }
+          
+    }
+</style>
+<body>
+    <nav>
+        <h1>Sh</h1>
+        <section>
+         <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">game</a>
+        <a href="#"> FAQ</a>
+      </section>  
+      <div>
+        <hr>
+      </div>      
+
+    </nav>
+    <script>
+      let sction=  document.querySelector("section");
+      let btn = document.querySelector("div");
+         btn.addEventListener("click", ()=>{
+           if( sction.style.display == "flex" ){
+            sction.style.display = "None";
+           }else{
+            sction.style.display = "flex";
+           }
+             
+         });
+    </script>
+</body>
+</html>
